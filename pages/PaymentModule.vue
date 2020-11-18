@@ -11,39 +11,39 @@
               <v-tabs color="purple" grow icons-and-text centered v-model="tab" align-with-title>
                 <v-tab>
                   <v-img contain class="container--fluid black " :aspect-ratio="16/9" width="186"
-                         height="41" :src="require('~/assets/images/payment/apple.svg')"></v-img>
+                         height="41" :src="require('../assets/images/payment/apple.svg')"></v-img>
                 </v-tab>
                 <v-tab>
                   <v-img contain class="container--fluid" :aspect-ratio="16/9" width="186" height="41"
-                         :src="require('~/assets/images/payment/google..svg')"></v-img>
-                </v-tab>
-
-                <v-tab>
-                  <v-img contain class="container--fluid" :aspect-ratio="16/9" width="186" height="41"
-                         :src="require('~/assets/images/payment/meeza.png')"></v-img>
+                         :src="require('../assets/images/payment/google..svg')"></v-img>
                 </v-tab>
                 <v-tab>
                   <v-img contain class="container--fluid" :aspect-ratio="16/9" width="186" height="41"
-                         :src="require('~/assets/images/payment/PayPal.png')"></v-img>
+                         :src="require('../assets/images/payment/meeza.png')"></v-img>
                 </v-tab>
                 <v-tab>
                   <v-img contain class="container--fluid" :aspect-ratio="16/9" width="186" height="41"
-                         :src="require('~/assets/images/payment/fawry-pay-english-logo-11111.png')"></v-img>
+                         :src="require('../assets/images/payment/fawry-pay-english-logo-11111.png')"></v-img>
                 </v-tab>
                 <v-tab>
                   <v-img contain class="container--fluid" :aspect-ratio="16/9" width="186" height="41"
-                         :src="require('~/assets/images/payment/visaandmastercard.png')"></v-img>
+                         :src="require('../assets/images/payment/visaandmastercard.png')"></v-img>
                 </v-tab>
                 <v-tab>
                   <v-img contain class="container--fluid" :aspect-ratio="16/9" width="186" height="41"
-                         :src="require('~/assets/images/payment/mob.png')"></v-img>
+                         :src="require('../assets/images/payment/mob.png')"></v-img>
                 </v-tab>
 
               </v-tabs>
               <v-tabs-items v-model="tab">
                 <v-tab-item>
+
+
                   <apple-pay></apple-pay>
+
+
                 </v-tab-item>
+
                 <v-tab-item>
                   <GooglePay></GooglePay>
 
@@ -54,14 +54,10 @@
                   <meeza></meeza>
 
                 </v-tab-item>
+
+
                 <v-tab-item>
                   <PayPal></PayPal>
-
-                </v-tab-item>
-
-
-                <v-tab-item>
-                  <fawry></fawry>
 
                 </v-tab-item>
 
@@ -103,16 +99,13 @@ import CreditCard from "@/components/paymentMethods/CreditCard";
 import Mobile from "@/components/paymentMethods/Mobile";
 import GooglePay from "@/components/paymentMethods/GooglePay";
 import Meeza from "@/components/paymentMethods/Meeza";
-import Fawry from "@/components/paymentMethods/Fawry";
 import PayPal from "@/components/paymentMethods/PayPal";
+import Fawry from "@/components/paymentMethods/Fawry";
 
 
 export default {
   name: 'PaymentModule',
-  components: {
-    PayPal,
-    ApplePay, CreditCard, Mobile, GooglePay, Meeza, Fawry,
-  },
+  components: {Fawry, Meeza, PayPal, GooglePay, Mobile, CreditCard, ApplePay},
   data: () => ({
     tab: 5,
     width: 300,
